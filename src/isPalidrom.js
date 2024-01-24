@@ -1,6 +1,3 @@
-# Live Site: https://panoramic-stone.surge.sh
-
-## Problem Solving
 function isPalindrome(sampleContent) {
     const stringLowerCase = sampleContent.replace(/[^a-zA-Z0-9]/g, '');
   

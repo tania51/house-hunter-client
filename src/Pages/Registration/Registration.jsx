@@ -50,34 +50,34 @@ const Register = () => {
                 .then(res => {
                     console.log(res.data.insertedId);
                     if (res.data.insertedId) {
-                        // const userEmail = {
-                        //     email: email
-                        // }
-                        // axiosPublic.post('/jwt', userEmail)
-                        //     .then(res => {
-                        //         if (res.data.token) {
-                        //             localStorage.setItem('access-token', res.data.token)
-                        //             Swal.fire({
-                        //                 icon: "success",
-                        //                 title: "User Created Successfully!!",
-                        //                 showConfirmButton: false,
-                        //                 timer: 1500
-                        //             });
-                        //             navigate('/login')
-                        //         }
-                        //     })
+                        const userEmail = {
+                            email: email
+                        }
+                        axiosPublic.post('/jwt', userEmail)
+                            .then(res => {
+                                if (res.data.token) {
+                                    localStorage.setItem('access-token', res.data.token)
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: "User Created Successfully!!",
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    });
+                                    navigate('/login')
+                                }
+                            })
                     } else {
                         localStorage.removeItem('access-token')
                     }
 
-                    // if(res.data.insertedId) {
-                    //     Swal.fire({
-                    //         icon: "success",
-                    //         title: "User Created Successfully!!",
-                    //         showConfirmButton: false,
-                    //         timer: 1500
-                    //       });
-                    // }
+                    if(res.data.insertedId) {
+                        Swal.fire({
+                            icon: "success",
+                            title: "User Created Successfully!!",
+                            showConfirmButton: false,
+                            timer: 1500
+                          });
+                    }
                 })
                 .catch(err => {
                     console.log(err);
